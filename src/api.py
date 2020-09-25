@@ -18,7 +18,8 @@ def get_rate(currencies=["USD"], days=30):
     api_rates = r.json().get("rates") # donc je recupere json et tout ce qui en clef rate
 
     all_rates = {currency: [] for currency in currencies} # comprehension de liste, non de tableau
-    all_days = sorted(api_rates.keys()) # on prend uniquement les jours et on verif l'ordre
+    # on prend uniquement les jours et on verif l'ordre
+    all_days = sorted(api_rates.keys())
 
     for each_day in all_days:
         [all_rates[currency].append(rate) for currency, rate in api_rates[each_day].items()]
