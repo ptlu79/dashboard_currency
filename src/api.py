@@ -20,7 +20,7 @@ def get_rate(currencies=["USD"], days=30):
     all_rates = {currency: [] for currency in currencies} # comprehension de liste, non de tableau
     # on prend uniquement les jours et on verif l'ordre
     all_days = sorted(api_rates.keys())
-
+    
     for each_day in all_days:
         [all_rates[currency].append(rate) for currency, rate in api_rates[each_day].items()]
         
